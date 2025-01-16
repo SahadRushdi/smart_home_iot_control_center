@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_home_iot_control_center/presentations/date_picker_app.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: "/date_picker_app",
     );
   }
 }
@@ -58,6 +60,13 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            ElevatedButton(onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const DatePickerApp())
+              );
+            }, child: const Text("Open Date Picker"),
             ),
           ],
         ),
