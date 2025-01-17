@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_home_iot_control_center/main.dart';
 
 /// Flutter code sample for [showDatePicker].
 
@@ -28,8 +29,6 @@ class DatePickerExample extends StatefulWidget {
 /// RestorationProperty objects can be used because of RestorationMixin.
 class _DatePickerExampleState extends State<DatePickerExample>
     with RestorationMixin {
-  // In this example, the restoration ID for the mixin is passed in through
-  // the [StatefulWidget]'s constructor.
   @override
   String? get restorationId => widget.restorationId;
 
@@ -87,6 +86,18 @@ class _DatePickerExampleState extends State<DatePickerExample>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const MyApp())
+            ); // Navigate to the previous page
+          },
+        ),
+        title: const Text('Select Your Desired Date'),
+      ),
       body: Center(
         child: OutlinedButton(
           onPressed: () {

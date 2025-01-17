@@ -17,8 +17,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      initialRoute: "/date_picker_app",
+      home: const MyHomePage(title: 'Smart Home IOT Control Center'),
     );
   }
 }
