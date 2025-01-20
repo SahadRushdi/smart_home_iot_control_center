@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(title: 'Smart Home IOT Control Center'),
+      home: const HomePage(title: 'Smart Home IOT Control Center'),
     );
   }
 }
