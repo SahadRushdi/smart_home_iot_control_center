@@ -12,6 +12,7 @@ class DatePickerApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       restorationScopeId: 'app',
+      debugShowCheckedModeBanner: false,
       home: DatePickerExample(restorationId: 'main'),
     );
   }
