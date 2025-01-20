@@ -53,7 +53,9 @@ class _HomePageState extends State<HomePage> {
           //   app bar
           Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: horizontalPadding, vertical: verticalPadding),
+                horizontal: horizontalPadding,
+                vertical: verticalPadding
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -61,18 +63,50 @@ class _HomePageState extends State<HomePage> {
                 Image.asset(
                   'lib/icons/menu.png',
                   height: 45,
-                  color: Colors.grey[800],
+                  color: Colors.blue[800],
                 ),
 
                 //   customer account icon
                 Icon(
                   Icons.person,
                   size: 45,
-                  color: Colors.grey[800],
+                  color: Colors.blue[800],
                 )
               ],
             ),
           ),
+
+          const SizedBox(height: 20),
+
+        //   Welcome
+          Padding(
+              padding:EdgeInsets.symmetric(
+                horizontal: horizontalPadding,
+              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "WELCOME TO IOT CONTROL CENTER",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 21,
+                      color: Colors.lightBlue.shade600
+                  ),
+                ),
+                const Text(
+                  "Hi Saad",
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 22,
+                      color: Colors.purple
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+
         ],
       )),
       floatingActionButton: FloatingActionButton(
