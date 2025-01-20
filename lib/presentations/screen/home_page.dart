@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
           flickerTimeInMilliSeconds: 1000,
           spreadColor: Colors.lightBlue,
           blurRadius: 10,
-          textSize: 25,
+          textSize: 28,
         )
       ),
       body: SafeArea(
@@ -84,37 +84,38 @@ class _HomePageState extends State<HomePage> {
               padding:EdgeInsets.symmetric(
                 horizontal: horizontalPadding,
               ),
-            child: Column(
+            child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "WELCOME TO IOT CONTROL CENTER",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 21,
-                      color: Colors.lightBlue.shade600
-                  ),
+                NeonText(
+                  text: "WELCOME TO IOT CONTROL CENTER",
+                  blurRadius: 10,
+                  textSize: 24,
+                  fontWeight: FontWeight.bold,
+                  textColor: Colors.blue,
                 ),
-                 Text(
-                  "Hi Saad,",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 22,
-                      color: Colors.purple[600]
-                  ),
-                ),
+                FlickerNeonText(
+                  text: "Hi Saad!",
+                  fontWeight: FontWeight.bold,
+                  flickerTimeInMilliSeconds: 1000,
+                  spreadColor: Colors.pink,
+                  textColor: Colors.purple,
+                  blurRadius: 50,
+                  textSize: 24,
+                )
               ],
             ),
           ),
 
           const SizedBox(height: 25),
-          
-          const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40.0),
-              child: Divider(
-                thickness: 1,
-                color: Color.fromARGB(255, 204, 204, 204),
-              ),
+
+          NeonLine(
+            spreadColor: Colors.purple,
+            lightSpreadRadius: 7,
+            lightBlurRadius: 10,
+            lineWidth: 450,
+            lineHeight: 0.02,
+            lineColor: Colors.brown.shade100,
           ),
 
           const SizedBox(height: 25),
@@ -122,17 +123,16 @@ class _HomePageState extends State<HomePage> {
         //   Smart Devices Grid
           Padding(
               padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
-              child: const Text(
-                "Smart Devices",
-                style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 22,
-                    color: Colors.purple
-                ),
+              child: const NeonText(
+                text: "Smart Devices",
+                spreadColor: Colors.pink,
+                blurRadius: 10,
+                textSize: 34,
+                textColor: Colors.purple,
               ),
           ),
 
-          const SizedBox(height: 25),
+          const SizedBox(height: 15),
 
         //   Grid
           Expanded(
