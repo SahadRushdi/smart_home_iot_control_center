@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home_iot_control_center/data/smart_device_box.dart';
-import 'package:smart_home_iot_control_center/presentations/date_picker_app.dart';
+import 'package:smart_home_iot_control_center/presentations/screen/date_picker_app.dart';
+import 'package:neon_widgets/neon_widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
@@ -37,15 +38,14 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         centerTitle: true,
-        title: Text(
-          widget.title,
-          style: const TextStyle(
-            fontSize: 24, // Increase the font size
-            fontWeight: FontWeight.bold, // Make it bold
-            color: Colors.white, // Set a custom color
-            letterSpacing: 1.2, // Add some spacing between letters
-          ),
-        ),
+        title:  const FlickerNeonText(
+          text: "Smart Home IOT Control Center",
+          fontWeight: FontWeight.bold,
+          flickerTimeInMilliSeconds: 1000,
+          spreadColor: Colors.lightBlue,
+          blurRadius: 10,
+          textSize: 25,
+        )
       ),
       body: SafeArea(
           child: Column(
