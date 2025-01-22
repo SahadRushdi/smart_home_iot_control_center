@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// Neon colors
+// Neon colors for Smart Device Grid.
 class NeonColors {
   static const Color activeBackground = Colors.black;
   static final Color inactiveBackground = Colors.blueGrey.shade900;
