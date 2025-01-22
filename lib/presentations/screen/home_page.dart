@@ -87,12 +87,21 @@ class _HomePageState extends State<HomePage> {
             child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                NeonText(
+                // NeonText(
+                //   text: "WELCOME TO IOT CONTROL CENTER",
+                //   blurRadius: 10,
+                //   textSize: 24,
+                //   fontWeight: FontWeight.bold,
+                //   textColor: Colors.blue,
+                // ),
+                FlickerNeonText(
                   text: "WELCOME TO IOT CONTROL CENTER",
-                  blurRadius: 10,
-                  textSize: 24,
                   fontWeight: FontWeight.bold,
+                  flickerTimeInMilliSeconds: 1000,
+                  spreadColor: Colors.lightBlue,
                   textColor: Colors.blue,
+                  blurRadius: 50,
+                  textSize: 24,
                 ),
                 FlickerNeonText(
                   text: "Hi Saad!",

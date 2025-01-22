@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home_iot_control_center/presentations/screen/home_page.dart';
-import 'package:neon_widgets/neon_widgets.dart';
 
 void main() {
   runApp(const MyApp());
