@@ -4,11 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SmartDeviceBox extends StatelessWidget {
-
   final String smartDeviceName;
   final String iconPath;
   final bool powerOn;
-  void Function(bool)? onChanged;
+  final void Function(bool)? onChanged;
 
   SmartDeviceBox({
     super.key,
@@ -21,54 +20,83 @@ class SmartDeviceBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius:BorderRadius.circular(24),
-            color: powerOn ? Colors.purple[900] : Colors.blue[500],
-          ),
-          child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 25.0),
-              child: Column(
+      padding: const EdgeInsets.all(15.0),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(24),
+          color: powerOn ? Colors.black : Colors.blueGrey.shade900,
+          boxShadow: [
+            BoxShadow(
+              color: powerOn ? Colors.purpleAccent : Colors.blueAccent,
+              blurRadius: 20,
+              spreadRadius: 5,
+            ),
+          ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 25.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // Neon icon
+              Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: powerOn ? Colors.purpleAccent : Colors.blueAccent,
+                      blurRadius: 30,
+                      spreadRadius: 5,
+                    ),
+                  ],
+                ),
+                child: Image.asset(
+                  iconPath,
+                  height: 65,
+                  color: powerOn ? Colors.white : Colors.grey.shade700,
+                ),
+              ),
+
+              // Smart device name + switch
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                //   icon
-                  Image.asset(
-                    iconPath,
-                    height: 65,
-                    color: powerOn ? Colors.white : Colors.grey.shade700,
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 25.0),
+                      child: Text(
+                        smartDeviceName,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: powerOn ? Colors.purpleAccent : Colors.blueAccent,
+                          shadows: [
+                            Shadow(
+                              blurRadius: 10,
+                              color: powerOn ? Colors.purpleAccent : Colors.blueAccent,
+                              offset: const Offset(0, 0),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
-
-                //   smart device name + switch
-                  Row(
-                    children: [
-                      Expanded(
-                          child: Padding(
-                              padding: const EdgeInsets.only(left: 25.0),
-                              child: Text(
-                                smartDeviceName,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  color: powerOn ? Colors.white : Colors.black,
-                                ),
-                              ),
-                          ),
-                      ),
-                      
-                      Transform.rotate(
-                          angle: pi / 2,
-                          child: CupertinoSwitch(
-                              value: powerOn,
-                              onChanged: onChanged,
-                          ),
-                      ),
-                    ],
-                  )
+                  Transform.rotate(
+                    angle: pi / 2,
+                    child: CupertinoSwitch(
+                      value: powerOn,
+                      onChanged: onChanged,
+                      activeColor: Colors.purpleAccent,
+                      trackColor: Colors.blueAccent.withOpacity(0.5),
+                    ),
+                  ),
                 ],
               ),
+            ],
           ),
         ),
+      ),
     );
   }
 }
