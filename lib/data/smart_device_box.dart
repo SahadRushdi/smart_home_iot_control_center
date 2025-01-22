@@ -1,7 +1,8 @@
 import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../core/themes/colors.dart';
 
 class SmartDeviceBox extends StatelessWidget {
   final String smartDeviceName;
@@ -24,11 +25,11 @@ class SmartDeviceBox extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),
-          color: powerOn ? Colors.black : Colors.blueGrey.shade900,
+          color: powerOn ? NeonColors.activeBackground : NeonColors.inactiveBackground,
           boxShadow: [
             BoxShadow(
-              color: powerOn ? Colors.purpleAccent : Colors.blueAccent,
-              blurRadius: 20,
+              color: powerOn ? NeonColors.activeShadow : NeonColors.inactiveShadow,
+              blurRadius: 18,
               spreadRadius: 5,
             ),
           ],
@@ -45,7 +46,7 @@ class SmartDeviceBox extends StatelessWidget {
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: powerOn ? Colors.purpleAccent : Colors.blueAccent,
+                      color: powerOn ? NeonColors.activeShadow : NeonColors.inactiveShadow,
                       blurRadius: 30,
                       spreadRadius: 5,
                     ),
@@ -54,7 +55,7 @@ class SmartDeviceBox extends StatelessWidget {
                 child: Image.asset(
                   iconPath,
                   height: 65,
-                  color: powerOn ? Colors.white : Colors.grey.shade700,
+                  color: powerOn ? NeonColors.activeIcon : NeonColors.inactiveIcon,
                 ),
               ),
 
@@ -70,11 +71,11 @@ class SmartDeviceBox extends StatelessWidget {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
-                          color: powerOn ? Colors.purpleAccent : Colors.blueAccent,
+                          color: powerOn ? NeonColors.activeText : NeonColors.inactiveText,
                           shadows: [
                             Shadow(
                               blurRadius: 10,
-                              color: powerOn ? Colors.purpleAccent : Colors.blueAccent,
+                              color: powerOn ? NeonColors.activeShadow : NeonColors.inactiveShadow,
                               offset: const Offset(0, 0),
                             ),
                           ],
@@ -87,8 +88,8 @@ class SmartDeviceBox extends StatelessWidget {
                     child: CupertinoSwitch(
                       value: powerOn,
                       onChanged: onChanged,
-                      activeColor: Colors.purpleAccent,
-                      trackColor: Colors.blueAccent.withOpacity(0.5),
+                      activeColor: NeonColors.activeSwitch,
+                      trackColor: NeonColors.inactiveSwitch,
                     ),
                   ),
                 ],
