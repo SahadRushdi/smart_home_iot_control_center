@@ -17,3 +17,22 @@ class NeonColors {
   static const Color activeSwitch = Colors.purpleAccent;
   static const Color inactiveSwitch = Colors.blueAccent;
 }
+
+// Neon Colors for the Home Page
+class AppColors {
+  static const Color appBarBackground = Colors.blueGrey;
+  static Color? menuIcon = Colors.blue[800];
+
+  static const Color welcomeTextSpreadColor = Colors.lightBlue;
+  static const Color welcomeTextColor = Colors.blue;
+  static const Color welcomeHiSpreadColor = Colors.pink;
+  static const Color welcomeHiTextColor = Colors.purple;
+
+  static const Color neonLineSpreadColor = Colors.purple;
+  static final Color neonLineBaseColor = Colors.brown.shade100;
+
+  static const Color smartDevicesHeadingSpreadColor = Colors.pink;
+  static const Color smartDevicesHeadingTextColor = Colors.purple;
+
+  static const Color floatingActionButtonIcon = Colors.white;
+}

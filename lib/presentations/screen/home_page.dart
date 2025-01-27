@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_home_iot_control_center/data/smart_device_box.dart';
 import 'package:smart_home_iot_control_center/presentations/screen/date_picker_app.dart';
 import 'package:neon_widgets/neon_widgets.dart';
+import 'package:smart_home_iot_control_center/core/themes/colors.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
@@ -42,7 +43,7 @@ class _HomePageState extends State<HomePage> {
           text: "Smart Home IOT Control Center",
           fontWeight: FontWeight.bold,
           flickerTimeInMilliSeconds: 1000,
-          spreadColor: Colors.lightBlue,
+          spreadColor: AppColors.welcomeTextSpreadColor,
           blurRadius: 10,
           textSize: 28,
         )
@@ -64,14 +65,14 @@ class _HomePageState extends State<HomePage> {
                 Image.asset(
                   'lib/icons/menu.png',
                   height: 45,
-                  color: Colors.blue[800],
+                  color: AppColors.menuIcon,
                 ),
 
                 //   customer account icon
                 Icon(
                   Icons.person,
                   size: 45,
-                  color: Colors.blue[800],
+                  color: AppColors.menuIcon,
                 )
               ],
             ),
@@ -98,8 +99,8 @@ class _HomePageState extends State<HomePage> {
                   text: "WELCOME TO IOT CONTROL CENTER",
                   fontWeight: FontWeight.bold,
                   flickerTimeInMilliSeconds: 1000,
-                  spreadColor: Colors.lightBlue,
-                  textColor: Colors.blue,
+                  spreadColor: AppColors.welcomeTextSpreadColor,
+                  textColor: AppColors.welcomeTextColor,
                   blurRadius: 50,
                   textSize: 24,
                 ),
@@ -107,8 +108,8 @@ class _HomePageState extends State<HomePage> {
                   text: "Hi Saad!",
                   fontWeight: FontWeight.bold,
                   flickerTimeInMilliSeconds: 1000,
-                  spreadColor: Colors.pink,
-                  textColor: Colors.purple,
+                  spreadColor: AppColors.welcomeHiSpreadColor,
+                  textColor: AppColors.welcomeHiTextColor,
                   blurRadius: 50,
                   textSize: 24,
                 )
@@ -119,12 +120,12 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(height: 25),
 
           NeonLine(
-            spreadColor: Colors.purple,
+            spreadColor: AppColors.neonLineSpreadColor,
             lightSpreadRadius: 7,
             lightBlurRadius: 10,
             lineWidth: 450,
             lineHeight: 0.02,
-            lineColor: Colors.brown.shade100,
+            lineColor: AppColors.neonLineBaseColor,
           ),
 
           const SizedBox(height: 25),
@@ -134,10 +135,10 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
               child: const NeonText(
                 text: "Smart Devices",
-                spreadColor: Colors.pink,
+                spreadColor: AppColors.smartDevicesHeadingSpreadColor,
                 blurRadius: 10,
                 textSize: 34,
-                textColor: Colors.purple,
+                textColor: AppColors.smartDevicesHeadingTextColor,
               ),
           ),
 
